@@ -1,0 +1,4 @@
+city1 = "Chennai"
+city2 = "chennvami"
+v = set(list(city2)) - set(list(city1))
+print('These characters',v, 'has been changed in city2.')

@@ -1,0 +1,13 @@
+
+import os
+import os.path
+import glob
+from datetime import datetime
+
+today = datetime.today()
+print("{:<20} {} {:>26}".format("Filename","Date", "Days"))
+for i in glob.glob('/home/joe/Temp/*'):
+    mtime = datetime.fromtimestamp(os.stat(i)[8])
+    filetime_delta = mtime - today
+    filetime = str(filetime_delta.days).lstrip('-')
+    print("{:<20} {} {:>10}".format(os.path.basename(i), mtime, filetime))
